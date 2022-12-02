@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!--responsividade-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <!--owl css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+    <title>Historiarum</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="/src/logo.jpg" alt="">
+            <nav>
+                <a href="#">RPGs</a>
+                <a href="#">HQs</a>
+                <a href="#">Filmes</a>
+                <a href="#">Documentários</a>
+            </nav>
+        </div>
+    </header>
+   
+    <main>
+        <div class="filme-principal">
+            <div class="container">
+                <h3 class="titulo">A Bandeira do Elefante e da Arara</h3>
+                <p class="descricao">O livro A Bandeira do Elefante e da Arara reúne dez histórias da série de mesmo nome que já concorreu diversos prêmios internacionais. Atravesse o Brasil Colonial em busca de aventuras com Gerard van Oost e Oludara no novo romance do escritor Christopher Kastensmidt.</p>
+                <div class="botoes">
+                    <button role="button" class="botao">
+                        <i class="fas fa-play"></i>
+                        <a href="https://youtu.be/dQv502rihZI" target="_blank">ASSISTIR AGORA</a>
+                        
+                    </button>
+                    <button role="button" class="botao">
+                        <i class="fas fa-info-circle"></i>
+                        <a href="https://www.eamb.org/brasil/" target="_blank">MAIS INFORMAÇÕES</a>
+                        
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="carrosel-filmes">
+        <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/asterix.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static',filename='img/bandeira_da_arara_e_do_elefante.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/cabelo_de_venus.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/CompanheirosDoCrepusculo.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/coracao_valente.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/maldita_guerra.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/revolucao_francesa.jpg')}}" alt="" srcset="">
+                </div>
+                <div class="item">
+                    <img class="box-filme" src="{{url_for('static', filename='img/UnchartedWatersOnlineCover.jpg')}}" alt="" srcset="">
+                </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/setup.js')}}"></script>
+ 
+</body>
+</html>
