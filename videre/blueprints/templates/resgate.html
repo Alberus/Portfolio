@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Resgate</title>
+<link href="{{ url_for('static', filename='css/resgate.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="container"> <!-- div container !-->
+
+	<div id="fundoGame"> <!-- div fundoGame !-->
+	
+		<div id="inicio" onclick="start()"><h1> Resgate </h1> <!-- div inicio !-->
+		<p>Utilize a tecla W para movimentar o helicóptero para cima, a tecla S para movimentar o helicóptero para baixo e a tecla D para atirar.</p>
+		<p> Clique aqui para iniciar!! </p>
+		</div> <!-- Fim da div inicio !-->
+		
+    </div> <!-- Fim da div fundoGame !-->
+	
+</div> <!-- Fim da div container !-->
+<!-- Sons do jogo !-->
+<audio src="{{url_for('static', filename='sons/som.mp3')}}" type="audio/mp3" preload="auto" id="somDisparo"></audio>
+<audio src="{{url_for('static', filename='sons/explosao.mp3')}}" type="audio/mp3" preload="auto" id="somExplosao"></audio>
+<audio src="{{url_for('static', filename='sons/musica_fundo.mp3')}}" type="audio/mp3" preload="auto" id="musica"></audio>
+<audio src="{{url_for('static', filename='sons/gameover.mp3')}}" type="audio/mp3" preload="auto" id="somGameover"></audio>
+<audio src="{{url_for('static', filename='sons/perdido.mp3')}}" type="audio/mp3" preload="auto" id="somPerdido"></audio>	
+<audio src="{{url_for('static', filename='sons/resgate.mp3')}}" type="audio/mp3" preload="auto" id="somResgate"></audio>
+
+<script type="text/javascript" src="{{url_for('static', filename='js/resgate_jquery-1.11.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/resgate_js.js')}}"></script> 
+<script type="text/javascript" src="{{url_for('static', filename='js/resgate_jquery-collision.min.js')}}"></script>
+
+</body>
+</html>
