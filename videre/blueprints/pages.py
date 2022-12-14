@@ -14,3 +14,7 @@ def outra():
 @bp.route("/resgate")
 def resgate():
     return render_template('resgate.html')
+
+#@bp.route("/crud")
+#def crud():
+#    return render_template('crud.html')
