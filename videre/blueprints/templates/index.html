@@ -1,10 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
-        <title>Uma página</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
     </head>
     <body>
-        <h1>Em Construção</h1>
-    </body>
+        
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-items"><a href="http://127.0.0.1:5000/sobre">Sobre</a></li>
+            </ul>
+        
+            <div class="right-container">
+                <button class="sub-btn">subscribe</button>
+                <a href="#" class="login-link">login</a>
+            </div>
+        </nav>
 
+        <div class="carousel-container">
+            <div class="carousel"></div>
+        </div>
+
+        <div class="video-card-container">
+            <div class="video-card">
+                <img src="static/img/frontend.jpg" class="video-card-image" alt="">
+                <video src="static/videos/frontend.mp4" mute loop class="card-video"></video>
+            </div>
+            <div class="video-card">
+                <img src="static/img/backend.PNG" class="video-card-image" alt="">
+                <video src="static/videos/backend.mp4" mute loop class="card-video"></video>
+            </div>
+            <div class="video-card">
+                <img src="static/img/datascience.PNG" class="video-card-image" alt="">
+                <video src="static/videos/datascience.mp4" mute loop class="card-video"></video>
+            </div>
+            <div class="video-card">
+                <img src="static/img/breve.PNG" class="video-card-image" alt="">
+                <video src="#" mute loop class="card-video"></video>
+            </div>
+            <div class="video-card">
+                <img src="static/img/breve.PNG" class="video-card-image" alt="">
+                <video src="#" mute loop class="card-video"></video>
+            </div>
+        </div>
+
+        <h1 class="title">Front End</h1>
+        <div class="projects-list">
+            <button class="pre-btn"><img src="static/img/pre.png" alt=""></button>
+            <button class="nxt-btn"><img src="static/img/nxt.png" alt=""></button>
+            <div class="card-container">
+                <a href="http://127.0.0.1:5000/">
+                <div class="card">
+                    <img src="static/img/poster-1.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">Portfolio</h2>
+                        <h6 class="des">Site portfolio com Flask e banco de dados</h6>
+                    </div>
+                </div></a>
+                <a href="http://127.0.0.1:5000/historiaflix">
+                <div class="card">
+                    <img src="static/img/poster-2.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">Historiaflix</h2>
+                        <h6 class="des">Um clone da Netlix construído com HTML e CSS</h6>
+                    </div>
+                </div></a>
+                <a href="http://127.0.0.1:5000/resgate">
+                <div class="card">
+                    <img src="static/img/poster-3.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">Resgate</h2>
+                        <h6 class="des">Um jogo 2D com Javascript e CSS.</h6>
+                    </div>
+                </div></a>
+
+            </div>
+        </div>
+        <h1 class="title">Back End</h1>
+        <div class="projects-list">
+            <button class="pre-btn"><img src="static/img/pre.png" alt=""></button>
+            <button class="nxt-btn"><img src="static/img/nxt.png" alt=""></button>
+            <div class="card-container">
+                <a href="http://127.0.0.1:5000/">
+                <div class="card">
+                    <img src="static/img/poster-1.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">Portfolio</h2>
+                        <h6 class="des">Site portfolio com Flask e banco de dados.</h6>
+                    </div>
+                </div></a>
+                <a href="http://127.0.0.1:5000/estudantes">
+                <div class="card">
+                    <img src="static/img/poster-4.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">CRUD</h2>
+                        <h6 class="des">Create, read, update e delete registros de estudantes no banco de dados.</h6>
+                    </div>
+                </div></a>    
+            </div>
+        </div>
+        <h1 class="title">Data Science</h1>
+        <div class="projects-list">
+            <button class="pre-btn"><img src="static/img/pre.png" alt=""></button>
+            <button class="nxt-btn"><img src="static/img/nxt.png" alt=""></button>
+            <div class="card-container">
+                <a href="http://127.0.0.1:5000/estudantes">
+                <div class="card">
+                    <img src="static/img/poster-4.png" class="card-img" alt="">
+                    <div class="card-body">
+                        <h2 class="name">CRUD</h2>
+                        <h6 class="des">Create, read, update e delete registros de estudantes no banco de dados.</h6>
+                    </div>
+                </div></a>    
+            </div>
+        </div>
+        <footer class="footer">
+            <p class="p-text">por Otávio Tavares</p>
+        </footer>
+
+        <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+    </body>
 </html>
