@@ -6,7 +6,7 @@ import os
 
 class TelegramBot:
     def __init__(self):
-        token = "5548054453:AAF_VU7AdPQSuIr-AYpP45-FioixiSOo6hE"
+        token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" <- Um token de bot do Telegran
         self.url_base = f'https://api.telegram.org/bot{token}/'
     #Iniciar bot
     def iniciar(self):
