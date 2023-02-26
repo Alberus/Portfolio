@@ -57,6 +57,7 @@ body {
     font-weight: 700;
     font-size: 12px;
     margin: 0 10px;
+    cursor: pointer;
 }
 
 .login-link{
@@ -209,7 +210,13 @@ body {
     background: #000;
 }
 
-.card-image{
+/* .card-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.card-img{
     width: 100%;
     height: 100%;
     object-fit: cover;

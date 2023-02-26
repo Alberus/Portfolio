@@ -1,0 +1,80 @@
+body {
+    background-color: #333;
+  }
+  
+  #cad_user {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #cad_user form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #cad_user form button {
+    margin-top: 10px;
+  }
+  
+  #cad_user form:first-child {
+    margin-bottom: 10px;
+  }
+  
+  .label_input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .label_input label {
+    margin-right: 10px;
+  }
+
+  .modal {
+    width: 50%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 30%;
+  }
+  
+  table th {
+    background-color: #eee;
+  }
+  
+  #fechar_button {
+
+    background-color: #726f6f;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  p{
+    text-align: justify;
+  }
+
+  #home_bt{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+  }
+  

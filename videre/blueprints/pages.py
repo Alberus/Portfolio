@@ -22,3 +22,9 @@ def sobre():
 @bp.route("/contatos")
 def contatos():
     return render_template("contatos.html")
+
+@bp.route("/telegram_bot")
+def bot():
+    return render_template("telegram_bot.html")
+
+

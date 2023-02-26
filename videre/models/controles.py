@@ -1,10 +1,14 @@
 from flask import Blueprint, request, url_for, redirect, render_template
-from models.tables import Estudante
+from flask_restful import Resource
+from models.tables import Estudante, Usuario
 from extentions.database import db
+from extentions.api import api
+import json
+import requests
 
 ct = Blueprint('controlador', __name__, template_folder='models')
 
-
+#Cadastra estudantes na tabela alunos
 @ct.route("/cadastrar_estudante", methods=['POST', 'GET'])
 def cad_estudante():
     if request.method == "POST":
@@ -16,14 +20,14 @@ def cad_estudante():
         db.session.commit()
         return redirect("/estudantes")
     return render_template('cadastrar_estudante.html')
-
+#Exclui registro na tabela alunos
 @ct.route("/delete/<int:id>")
 def delete(id):
   del_estud = Estudante.query.filter_by(id=id).first()
   db.session.delete(del_estud)
   db.session.commit()
   return redirect("/estudantes")
-
+#Altera registros na tabela alunos
 @ct.route("/update_estudante/<int:id>", methods=['GET','POST'])
 def update_estudante(id):
   if request.method == 'POST':
@@ -47,36 +51,79 @@ def update_estudante(id):
     return redirect("/estudantes")
   to_update = Estudante.query.filter_by(id=id).first()
   return render_template("update_estudante.html", update_estudante=to_update)
-
+#Lista dos os estudantes registrados na tabela alunos
 @ct.route("/estudantes")
 def lista_estudantes():
   lista_estudantes = Estudante.query.all()
   return render_template('lista_estudantes.html', estuds=lista_estudantes)
 
-# from extentions.database import db
-# from models.tables import Estudante
 
-# class Estudantes_CRUD:
-#   def select(self):
-#     with db:
-#       data = db.session.query(Estudante).all()
-#       return data
+@ct.route("/users/", methods=['POST', 'PUT', 'GET', 'DELETE'])
+def usuarios_adm():
+  return render_template("users.html")
+
+class Usuarios(Resource):
+
+  def get(self, id):                #consulta nome de usuário
+    user = Usuario.query.filter_by(id)
+    try:
+      response={
+        'id':user.id,
+        'nome':user.nome
+      }
+    except IndexError:
+      mensagem = "Usuario de ID {} não existe".format(id)
+      response = {"status":"erro", "mensagem":mensagem}
+    except Exception:
+      mensagem = "Erro Desconhecido"
+      response = {"status":"erro", "mensagem":mensagem}
+    return response
+
+  def put(self, id):                #atualiza dados
+    user = Usuario.query.filter_by(id)
+    dados = request.json
+    if "nome" in dados:
+      user.nome = dados['nome']
+    if "senha" in dados:
+      user.senha = dados['senha']
+    db.session.commit()
+    response = {
+      'id':user.id,
+      'nome':user.nome,
+      'senha':user.senha
+    }
+    return response
+
+  def delete(self,id):            #deleta usuario
+    user = Usuario.query.filter_by(id)
+    mensagem = "Usuario {} excluido com sucesso".format(user.nome)
+    db.session.delete(user)
+    db.session.commit()
+    return {"status":"sucesso", "mensagem":mensagem}
   
-#   def insert(self, nome, sexo, turma):
-#     with db:
-#       e = Estudante(nome=nome, sexo=sexo, turma=turma)
-#       db.session.add(e)
-#       db.session.commit()
 
-#   def update(self, nome, turma):
-#     with db:
-#       db.session.query(Estudante).filter(Estudante.nome == nome).update({"turma": turma})
-#       db.session.commit()
 
-#   def delete(self, nome):
-#     with db:
-#       db.session.query(Estudante).filter(Estudante.nome == nome).delete()
-#       db.session.commit()
+class ListaUsuarios(Resource):
+  def post(self):
+    dados = request.json
+    nome = dados['nome']
+    senha = dados['senha']
+    user = Usuario(nome, senha)
+    db.session.add(user)
+    db.session.commit()
+    return "Adicionado com sucesso"
+  
+  def get(self):
+    users = Usuario.query.all()
+    response = [{'id':i.id, 'nome':i.nome} for i in users]
+    return response
+
+api.add_resource(Usuarios, "/usuario/<int:id>/")
+api.add_resource(ListaUsuarios, "/usuarios/")
+
+
+
+
 
 
 

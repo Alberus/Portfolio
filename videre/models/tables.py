@@ -26,6 +26,18 @@ class Estudante(db.Model):
     def __repr__(self):
         return '<Estudante %r>' % self.id
 
+
+class Usuario(db.Model):
+    __tablename__ = "usuarios"
+    id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
+    nome = sa.Column(sa.String(40))
+    senha = sa.Column(sa.String(30))
+
+    def __init__(self, nome, senha):
+        self.nome = nome
+        self.senha = senha
+        
+
 def create_tables(app, db=db):
     with app.app_context():
         db.create_all()

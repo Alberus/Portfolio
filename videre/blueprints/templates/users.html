@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/users.css">
+
+    <title>Cadastro de Usuários</title>
+    
+</head>
+<body >
+    <a href="http://127.0.0.1:5000/"><button id="home_bt">Home</button></a>
+    <div id="cad_user">
+        <h2>Cadastrar Usuário</h2>
+    <form onsubmit="postarUsuario()">
+        <div class="label_input">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+        </div>
+        <br>
+        <div class="label_input">
+        <label for="senha">Senha</label>
+        <input type="text" name="senha" id="senha">
+        </div>
+        </form>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <form>
+        <button type="button" onclick="exibirUsuarios()">Ver Usuários</button>
+    </form>
+    <p>OBS.: Atualmente o cadastro de usuário apenas registra um nome e senha no banco de dados e permite que os usuários registrados sejam exibidos ao se clicar em "Ver Usuários". No futuro, serão implementados verificadores para os inputs e, uma vez cadastrado, o usuário poderá acessar uma área interna do site.</p>
+    </div>
+    <dialog class="modal" id="ver_users">
+        <table id="tabela"></table>
+    </dialog>
+    
+    <script type="text/javascript" src="{{url_for('static', filename='js/users.js')}}"></script>
+</body>
+</html>
