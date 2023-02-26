@@ -46,10 +46,7 @@ murmurhash==1.0.9
 networkx==3.0
 nibabel==5.0.1
 nipype==1.8.5
-numpy==1.24.2
-opencv-python==4.7.0.68
 packaging==23.0
-pandas==1.5.3
 pathlib==1.0.1
 pathy==0.10.1
 pluggy @ file:///C:/ci/pluggy_1648042746254/work
@@ -61,7 +58,6 @@ pydantic==1.10.5
 pydot==1.4.2
 pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
 pyparsing==3.0.9
-PyPDF2==2.12.1
 PySocks @ file:///C:/ci_310/pysocks_1642089375450/work
 python-dateutil==2.8.2
 python-telegram-bot==20.1
