@@ -3,6 +3,7 @@ anyio==3.6.2
 blis==0.7.9
 brotlipy==0.7.0
 catalogue==2.0.8
+streamlit==1.16.0
 certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
 cffi @ file:///C:/b/abs_49n3v2hyhr/croot/cffi_1670423218144/work
 charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
